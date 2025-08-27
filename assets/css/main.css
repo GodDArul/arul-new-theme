@@ -1460,7 +1460,6 @@ body {
 }
 /* -------------------------------------------------------------------------
  * Styling untuk Sidebar NAZROEL CELLULER
- * Tambahkan kode CSS ini ke file main.css Anda
  * ---------------------------------------------------------------------- */
 
 /* Container utama sidebar */
@@ -1972,7 +1971,6 @@ body {
 
 /* -------------------------------------------------------------------------
  * Styling untuk Single Post (Artikel Detail)
- * Tambahkan CSS ini ke file main.css Anda
  * ---------------------------------------------------------------------- */
 
 /* Container artikel detail */
@@ -2650,107 +2648,6 @@ body {
         border: 1px solid #ddd !important;
         margin-right: 5px !important;
         margin-bottom: 5px !important;
-    }
-}
-
-/* -------------------------------------------------------------------------
- * Dark Mode Support (opsional - jika tema mendukung dark mode)
- * ---------------------------------------------------------------------- */
-
-@media (prefers-color-scheme: dark) {
-    .blog-detail article {
-        background-color: #1e2124;
-        color: #dcddde;
-    }
-    
-    .blog-detail .entry-title {
-        color: #ffffff;
-    }
-    
-    .blog-detail .entry-meta {
-        color: #b9bbbe;
-    }
-    
-    .blog-detail .entry-meta span {
-        background-color: #2f3136;
-    }
-    
-    .blog-detail .entry-meta span:hover {
-        background-color: #36393f;
-    }
-    
-    .blog-detail .entry-content {
-        color: #dcddde;
-    }
-    
-    .blog-detail .entry-content h2,
-    .blog-detail .entry-content h3,
-    .blog-detail .entry-content h4 {
-        color: #ffffff;
-    }
-    
-    .blog-detail .entry-content blockquote {
-        background-color: #2f3136;
-        color: #b9bbbe;
-    }
-    
-    .blog-detail .entry-content code {
-        background-color: #2f3136;
-        color: #f47068;
-    }
-    
-    .blog-detail .entry-footer {
-        background-color: #2f3136;
-        border-top-color: #40444b;
-    }
-    
-    .page-links {
-        background-color: #2f3136;
-        border-top-color: #40444b;
-    }
-    
-    .post-navigation {
-        background-color: #1e2124;
-    }
-    
-    .post-navigation .nav-previous {
-        border-right-color: #40444b;
-    }
-    
-    .post-navigation a {
-        color: #dcddde;
-    }
-    
-    .post-navigation a:hover {
-        background-color: #2f3136;
-    }
-    
-    .nav-direction {
-        color: #b9bbbe;
-    }
-    
-    .nav-title {
-        color: #ffffff;
-    }
-    
-    .comments-section {
-        background-color: #1e2124;
-    }
-    
-    .comments-section h3 {
-        color: #ffffff;
-    }
-    
-    .no-content {
-        background-color: #1e2124;
-    }
-    
-    .no-content h2 {
-        color: #ffffff;
-    }
-    
-    .no-content p {
-        color: #b9bbbe;
     }
 }
 
