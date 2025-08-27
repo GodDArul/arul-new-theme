@@ -35,8 +35,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) && ! dynamic_sidebar( 'sidebar-1' ) ) : 
                     <span class="contact-icon-wa">💬</span>
                     <div class="contact-details">
                         <strong>WhatsApp</strong>
-                        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">
-                            0812-3456-7890
+                        <a href="https://wa.me/6285786834468" target="_blank" rel="noopener">
+                            +62 857-8683-4468
                         </a>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) && ! dynamic_sidebar( 'sidebar-1' ) ) : 
                     <span class="contact-icon-phone">📱</span>
                     <div class="contact-details">
                         <strong>Telepon</strong>
-                        <span>0271-123456</span>
+                        <span>+62 857-8683-4468</span>
                     </div>
                 </div>
                 
@@ -53,7 +53,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) && ! dynamic_sidebar( 'sidebar-1' ) ) : 
                     <span class="contact-icon-address">📍</span>
                     <div class="contact-details">
                         <strong>Alamat Toko</strong>
-                        <span>Jl. Slamet Riyadi No. 123<br>Surakarta, Jawa Tengah</span>
+                        <span>Pengging<br>Boyolali, Jawa Tengah</span>
                     </div>
                 </div>
                 
@@ -61,7 +61,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) && ! dynamic_sidebar( 'sidebar-1' ) ) : 
                     <span class="contact-icon-hours">🕒</span>
                     <div class="contact-details">
                         <strong>Jam Buka</strong>
-                        <span>Senin - Sabtu: 08:00 - 21:00<br>Minggu: 09:00 - 18:00</span>
+                        <span>Senin - Minggu: 09:00 - 21:00
                     </div>
                 </div>
             </div>
