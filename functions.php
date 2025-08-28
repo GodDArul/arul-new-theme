@@ -442,7 +442,7 @@ add_action('wp_ajax_submit_contact_form', 'handle_contact_form_submission');
 add_action('wp_ajax_nopriv_submit_contact_form', 'handle_contact_form_submission');
 
 /* -------------------------------------------------------------------------
- *  NAZROEL RELATED POSTS FUNCTIONALITY
+ *  NAZROEL RELATED (Berita Terkait) POSTS FUNCTIONALITY
  * ---------------------------------------------------------------------- */
 /**
  * @param int $post_id ID post yang sedang dibuka
