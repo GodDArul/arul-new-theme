@@ -3423,64 +3423,8 @@ html {
     }
 }
 
-/* -------------------------------------------------------------------------
- * Dark Mode Support (opsional)
- * ---------------------------------------------------------------------- */
-
-@media (prefers-color-scheme: dark) {
-    .lokasi-main-section {
-        background: #1e1e1e;
-    }
-    
-    .info-box,
-    .direction-info {
-        background: #2d2d2d;
-        color: #e0e0e0;
-        border-color: #404040;
-    }
-    
-    .lokasi-map-area h2,
-    .lokasi-info-area .info-box h2,
-    .direction-info h3,
-    .alamat-item strong,
-    .detail-item strong,
-    .hari-nama {
-        color: #ffffff;
-    }
-    
-    .detail-item,
-    .jam-item,
-    .fasilitas-item {
-        background: #404040;
-    }
-    
-    .detail-item:hover,
-    .jam-item:hover,
-    .fasilitas-item:hover {
-        background: #4a4a4a;
-    }
-    
-    .alamat-item p,
-    .direction-info li,
-    .detail-item p,
-    .fasilitas-item p,
-    .cta-lokasi-content p {
-        color: #b0b0b0;
-    }
-    
-    .catatan-jam {
-        background: #3d3d1f;
-        border-left-color: #ffc107;
-    }
-    
-    .catatan-jam p {
-        color: #d4c441;
-    }
-}
-
-
 /* =========================================================================
-   RELATED POSTS SECTION - Nazroel Theme
+   RELATED POSTS SECTION (Berita Terkait) - Nazroel Theme
    ========================================================================= */
 
 /* Main wrapper - full width di bawah content+sidebar */
