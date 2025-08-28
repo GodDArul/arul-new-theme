@@ -3477,3 +3477,381 @@ html {
         color: #d4c441;
     }
 }
+
+
+/* =========================================================================
+   RELATED POSTS SECTION - Nazroel Theme
+   ========================================================================= */
+
+/* Main wrapper - full width di bawah content+sidebar */
+.related-posts-wrapper {
+    width: 100%;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    margin-top: 2rem;
+    padding: 2.5rem 0;
+}
+
+.related-posts-section {
+    max-width: 100%;
+}
+
+/* Header section */
+.related-posts-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.related-posts-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.related-icon {
+    font-size: 1.6rem;
+}
+
+.related-posts-subtitle {
+    color: #6c757d;
+    font-size: 1rem;
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Grid layout untuk artikel */
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Individual post item */
+.related-post-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #e9ecef;
+}
+
+.related-post-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #007cba;
+}
+
+/* Thumbnail section */
+.related-post-thumbnail {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: #f8f9fa;
+}
+
+.related-post-thumbnail a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.related-post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.related-post-item:hover .related-post-image {
+    transform: scale(1.05);
+}
+
+/* Placeholder untuk post tanpa thumbnail */
+.related-post-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.placeholder-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+/* Category overlay */
+.related-post-category {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: rgba(0, 124, 186, 0.9);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+}
+
+/* Content section */
+.related-post-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 180px); /* Adjust based on thumbnail height */
+}
+
+/* Meta information */
+.related-post-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.related-post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.meta-icon {
+    font-size: 0.75rem;
+}
+
+/* Title */
+.related-post-title {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.related-post-title a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.related-post-title a:hover {
+    color: #007cba;
+}
+
+/* Excerpt */
+.related-post-excerpt {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+/* Footer dengan read more link */
+.related-post-footer {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid #f1f3f4;
+}
+
+.related-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #007cba;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.related-read-more:hover {
+    color: #005a8b;
+    gap: 0.75rem;
+}
+
+.read-more-arrow {
+    transition: transform 0.3s ease;
+}
+
+.related-read-more:hover .read-more-arrow {
+    transform: translateX(4px);
+}
+
+/* Footer section dengan link ke semua artikel */
+.related-posts-footer {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.view-all-posts {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #007cba;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 124, 186, 0.3);
+}
+
+.view-all-posts:hover {
+    background: #005a8b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 124, 186, 0.4);
+    gap: 0.75rem;
+}
+
+.view-all-icon {
+    font-size: 1.1rem;
+}
+
+.view-all-arrow {
+    transition: transform 0.3s ease;
+}
+
+.view-all-posts:hover .view-all-arrow {
+    transform: translateX(4px);
+}
+
+/* =========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================= */
+
+/* Large screens (desktop) */
+@media (min-width: 1200px) {
+    .related-posts-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    
+    .related-posts-wrapper {
+        padding: 3rem 0;
+    }
+}
+
+/* Medium screens (tablet) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .related-posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .related-posts-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Small screens (mobile landscape) */
+@media (max-width: 767px) and (min-width: 481px) {
+    .related-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .related-posts-wrapper {
+        padding: 2rem 0;
+    }
+    
+    .related-posts-title {
+        font-size: 1.4rem;
+    }
+    
+    .related-post-content {
+        padding: 1rem;
+    }
+    
+    .related-post-title {
+        font-size: 1rem;
+    }
+    
+    .related-post-meta {
+        font-size: 0.75rem;
+        gap: 0.75rem;
+    }
+}
+
+/* Very small screens (mobile portrait) */
+@media (max-width: 480px) {
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .related-posts-wrapper {
+        padding: 1.5rem 0;
+    }
+    
+    .related-posts-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .related-posts-subtitle {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+    
+    .related-post-item {
+        border-radius: 8px;
+    }
+    
+    .related-post-thumbnail {
+        aspect-ratio: 16/10;
+    }
+    
+    .related-post-content {
+        padding: 1rem;
+    }
+    
+    .related-post-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .related-post-excerpt {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .related-post-meta {
+        font-size: 0.7rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .view-all-posts {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================================================
+   PRINT STYLES
+   ========================================================================= */
+
+@media print {
+    .related-posts-wrapper {
+        display: none;
+    }
+}

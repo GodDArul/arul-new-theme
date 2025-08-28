@@ -274,6 +274,16 @@ get_header();
     </div><!-- .container -->
 </main><!-- #primary -->
 
+<!-- ========== RELATED POSTS SECTION (FULL WIDTH) ========== -->
+<?php if ( have_posts() ) : ?>
+    <div class="related-posts-wrapper">
+        <div class="container">
+            <?php nazroel_display_related_posts(); ?>
+        </div>
+    </div>
+<?php endif; ?>
+<!-- ========== END RELATED POSTS SECTION ========== -->
+
 <?php
 get_footer();
 ?>
