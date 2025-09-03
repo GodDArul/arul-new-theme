@@ -28,19 +28,19 @@ get_header();
             <h2>PILIH JENIS PERANGKAT ANDA :</h2>
             <div class="device-grid">
                 <div class="device-card">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Iphone.png' ); ?>" alt="iPhone Repair">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Device/Iphone.png' ); ?>" alt="iPhone Repair">
                     <h3>iPhone</h3>
                 </div>
                 <div class="device-card">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Android.png' ); ?>" alt="Android Repair">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images//Device/Android.png' ); ?>" alt="Android Repair">
                     <h3>Android</h3>
                 </div>
                 <div class="device-card">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Tablet.png' ); ?>" alt="Tablet Repair">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Device/Tablet.png' ); ?>" alt="Tablet Repair">
                     <h3>Tablet</h3>
                 </div>
                 <div class="device-card">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ClassicPhone.png' ); ?>" alt="Clssic Phone Repair">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Device/ClassicPhone.png' ); ?>" alt="Clssic Phone Repair">
                     <h3>Classic Phone</h3>
                 </div>
             </div><!-- .device-grid -->
