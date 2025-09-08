@@ -444,3 +444,107 @@ function handle_contact_form_submission() {
 }
 add_action('wp_ajax_submit_contact_form', 'handle_contact_form_submission');
 add_action('wp_ajax_nopriv_submit_contact_form', 'handle_contact_form_submission');
+
+/* -------------------------------------------------------------------------
+ *  ENQUEUE LAYANAN PAGE ASSETS
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Enqueue JavaScript untuk halaman Layanan
+ */
+function arul_enqueue_layanan_assets() {
+    // Cek apakah kita berada di halaman yang menggunakan template layanan
+    if (is_page_template('Page-Layanan.php') || is_page('layanan')) {
+        
+        // Enqueue JavaScript untuk service modal
+        wp_enqueue_script(
+            'arul-service-modal',
+            get_template_directory_uri() . '/assets/js/service-modal.js',
+            array(),
+            '1.0.0',
+            true
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'arul_enqueue_layanan_assets');
+
+/**
+ * Fungsi helper untuk mendapatkan data layanan
+ */
+function get_service_data($service_type = '') {
+    $services = array(
+        'iphone' => array(
+            'title' => 'Service iPhone',
+            'description' => 'Layanan perbaikan khusus untuk semua model iPhone dengan teknisi berpengalaman dan spare parts original Apple.',
+            'icon' => '🍎',
+            'price_range' => 'Rp 100.000 - Rp 2.000.000'
+        ),
+        'android' => array(
+            'title' => 'Service Android',
+            'description' => 'Perbaikan menyeluruh untuk berbagai merek smartphone Android seperti Samsung, Xiaomi, Oppo, Vivo, dan lainnya.',
+            'icon' => '📱',
+            'price_range' => 'Rp 75.000 - Rp 1.500.000'
+        ),
+        'tablet' => array(
+            'title' => 'Service Tablet',
+            'description' => 'Service tablet iPad dan Android tablet dengan penanganan khusus untuk layar besar dan komponen yang lebih kompleks.',
+            'icon' => '📱',
+            'price_range' => 'Rp 150.000 - Rp 2.500.000'
+        ),
+        'classic' => array(
+            'title' => 'Service Classic Phone',
+            'description' => 'Perbaikan ponsel klasik/feature phone. Kami juga melayani handphone jadul yang sulit dicari spare partnya.',
+            'icon' => '📞',
+            'price_range' => 'Rp 50.000 - Rp 500.000'
+        ),
+        'lcd_touchscreen' => array(
+            'title' => 'Ganti LCD/Touchscreen',
+            'description' => 'Penggantian layar LCD dan touchscreen untuk semua jenis gadget dengan kualitas terbaik dan garansi resmi.',
+            'icon' => '🖥️',
+            'price_range' => 'Rp 200.000 - Rp 3.000.000'
+        ),
+        'battery' => array(
+            'title' => 'Ganti Baterai',
+            'description' => 'Penggantian baterai dengan kapasitas original. Meningkatkan daya tahan gadget Anda seperti baru lagi.',
+            'icon' => '🔋',
+            'price_range' => 'Rp 75.000 - Rp 800.000'
+        )
+    );
+    
+    if ($service_type && isset($services[$service_type])) {
+        return $services[$service_type];
+    }
+    
+    return $services;
+}
+
+/**
+ * Shortcode untuk menampilkan service cards
+ * Usage: [service_cards type="popular"]
+ */
+function arul_service_cards_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'type' => 'all',
+        'columns' => '3'
+    ), $atts);
+    
+    $services = get_service_data();
+    
+    ob_start();
+    ?>
+    <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(<?php echo (300 / intval($atts['columns'])); ?>px, 1fr));">
+        <?php foreach ($services as $key => $service): ?>
+            <div class="service-card" onclick="showServiceModal('<?php echo esc_js($service['title']); ?>', '<?php echo esc_js($service['description']); ?>', '<?php echo esc_js($service['icon']); ?>')">
+                <div class="service-icon"><?php echo $service['icon']; ?></div>
+                <h3><?php echo $service['title']; ?></h3>
+                <p><?php echo $service['description']; ?></p>
+                <?php if (isset($service['price_range'])): ?>
+                    <div class="service-price"><?php echo $service['price_range']; ?></div>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('service_cards', 'arul_service_cards_shortcode');
