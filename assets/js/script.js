@@ -247,3 +247,79 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+/**
+ * Service Modal JavaScript
+ * Menangani interaksi modal untuk halaman layanan
+ * 
+ * @package Arul_New_Theme
+ * @file /assets/js/service-modal.js
+ */
+
+// Fungsi untuk menampilkan detail perangkat (kategori lama)
+function showServiceDetails(deviceType) {
+    let description = '';
+    let icon = '';
+    
+    switch(deviceType) {
+        case 'iPhone':
+            description = 'Layanan perbaikan khusus untuk semua model iPhone dengan teknisi berpengalaman dan spare parts original Apple.';
+            icon = '🍎';
+            break;
+        case 'Android':
+            description = 'Perbaikan menyeluruh untuk berbagai merek smartphone Android seperti Samsung, Xiaomi, Oppo, Vivo, dan lainnya.';
+            icon = '📱';
+            break;
+        case 'Tablet':
+            description = 'Service tablet iPad dan Android tablet dengan penanganan khusus untuk layar besar dan komponen yang lebih kompleks.';
+            icon = '📱';
+            break;
+        case 'Classic Phone':
+            description = 'Perbaikan ponsel klasik/feature phone. Kami juga melayani handphone jadul yang sulit dicari spare partnya.';
+            icon = '📞';
+            break;
+    }
+    
+    showServiceModal(deviceType, description, icon);
+}
+
+// Fungsi untuk menampilkan modal layanan
+function showServiceModal(title, description, icon) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalDescription').textContent = description;
+    document.getElementById('modalIcon').textContent = icon;
+    document.getElementById('serviceModal').style.display = 'block';
+    
+    // Tambahkan class untuk animasi
+    setTimeout(function() {
+        document.querySelector('.modal-content').classList.add('modal-show');
+    }, 10);
+}
+
+// Fungsi untuk menutup modal
+function closeServiceModal() {
+    document.querySelector('.modal-content').classList.remove('modal-show');
+    setTimeout(function() {
+        document.getElementById('serviceModal').style.display = 'none';
+    }, 300);
+}
+
+// Tutup modal jika user klik di luar modal
+window.onclick = function(event) {
+    const modal = document.getElementById('serviceModal');
+    if (event.target === modal) {
+        closeServiceModal();
+    }
+}
+
+// Tutup modal dengan ESC key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeServiceModal();
+    }
+});
+
+// Inisialisasi ketika DOM loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Service Modal JavaScript loaded');
+});
