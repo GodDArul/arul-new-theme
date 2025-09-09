@@ -132,24 +132,78 @@ body {
     margin-bottom: 30px; /* Jarak dari footer */
 }
 
-/* --- Styling Footer (site-footer) --- */
+/* === Styling Footer (site-footer) === */
 .site-footer {
-    background-color: #2c3e50; /* Warna sama dengan header */
-    color: #bdc3c7; /* Warna teks abu-abu terang */
-    padding: 30px 0;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.site-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand h3 {
+    color: #f7f7f7;
+    font-size: 1.4em;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.footer-brand p {
+    color: #bdc3c7;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.footer-contact {
+    text-align: right;
+}
+
+.footer-contact p {
+    margin: 0 0 5px 0;
+    color: #bdc3c7;
+    font-size: 0.9em;
+}
+
+.footer-bottom {
     text-align: center;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #95a5a6;
     font-size: 0.85em;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Bayangan ke atas */
 }
 
-.site-footer a {
-    color: #3498db; /* Warna link biru */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.site-footer a:hover {
-    color: #ecf0f1; /* Warna putih saat hover */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-contact {
+        text-align: center;
+    }
+    
+    .site-footer {
+        padding: 30px 0 20px;
+    }
 }
 
  /* -------------------------------------------------------------------------
