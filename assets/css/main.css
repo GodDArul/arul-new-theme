@@ -556,7 +556,7 @@ body {
         padding: 50px 0;
     }
     
-    .popular-services-section h2 {
+    .popular_services_section h2 {
         font-size: 1.8em;
         margin-bottom: 40px;
     }
@@ -928,11 +928,11 @@ body {
         gap: 20px;
         padding: 0 15px;
     }
-
+    
     .device-card {
         padding: 20px;
     }
-
+    
     .device-card img {
         max-width: 70px;
     }
@@ -2480,7 +2480,7 @@ body {
 .blog-detail .entry-content ul,
 .blog-detail .entry-content ol {
     margin-bottom: 1.2em;
-    padding-left: 2em;
+          padding-left: 2em;
 }
 
 .blog-detail .entry-content li {
@@ -2981,18 +2981,11 @@ body {
  * ---------------------------------------------------------------------- */
 
 @media print {
-    .blog-detail .entry-meta,
-    .share-section,
-    .article-cta,
-    .post-navigation,
-    .comments-section,
-    .sidebar {
-        display: none !important;
-    }
-    
-    .blog-detail article {
-        box-shadow: none !important;
-        border: 1px solid #ddd !important;
+    .blog-detail,
+    .contact-hero-section,
+    .contact-form-section {
+        background: white !important;
+        color: black !important;
     }
     
     .blog-detail .entry-content {
@@ -3250,7 +3243,8 @@ html {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60px;
     height: 4px;
     background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
@@ -3790,12 +3784,6 @@ html {
     .jam-operasional-box {
         display: block !important;
     }
-    
-    .detail-item,
-    .jam-item {
-        background: #f9f9f9 !important;
-        border: 1px solid #ddd !important;
-    }
 }
 
 /* =========================================================================
@@ -3904,11 +3892,6 @@ html {
     justify-content: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-}
-
-.placeholder-icon {
-    font-size: 2.5rem;
-    opacity: 0.8;
 }
 
 /* Category overlay */
