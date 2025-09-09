@@ -477,37 +477,31 @@ function get_service_data($service_type = '') {
             'title' => 'Service iPhone',
             'description' => 'Layanan perbaikan khusus untuk semua model iPhone dengan teknisi berpengalaman dan spare parts original Apple.',
             'icon' => '🍎',
-            'price_range' => 'Rp 100.000 - Rp 2.000.000'
         ),
         'android' => array(
             'title' => 'Service Android',
             'description' => 'Perbaikan menyeluruh untuk berbagai merek smartphone Android seperti Samsung, Xiaomi, Oppo, Vivo, dan lainnya.',
             'icon' => '📱',
-            'price_range' => 'Rp 75.000 - Rp 1.500.000'
         ),
         'tablet' => array(
             'title' => 'Service Tablet',
             'description' => 'Service tablet iPad dan Android tablet dengan penanganan khusus untuk layar besar dan komponen yang lebih kompleks.',
             'icon' => '📱',
-            'price_range' => 'Rp 150.000 - Rp 2.500.000'
         ),
         'classic' => array(
             'title' => 'Service Classic Phone',
             'description' => 'Perbaikan ponsel klasik/feature phone. Kami juga melayani handphone jadul yang sulit dicari spare partnya.',
             'icon' => '📞',
-            'price_range' => 'Rp 50.000 - Rp 500.000'
         ),
         'lcd_touchscreen' => array(
             'title' => 'Ganti LCD/Touchscreen',
             'description' => 'Penggantian layar LCD dan touchscreen untuk semua jenis gadget dengan kualitas terbaik dan garansi resmi.',
             'icon' => '🖥️',
-            'price_range' => 'Rp 200.000 - Rp 3.000.000'
         ),
         'battery' => array(
             'title' => 'Ganti Baterai',
             'description' => 'Penggantian baterai dengan kapasitas original. Meningkatkan daya tahan gadget Anda seperti baru lagi.',
             'icon' => '🔋',
-            'price_range' => 'Rp 75.000 - Rp 800.000'
         )
     );
     
