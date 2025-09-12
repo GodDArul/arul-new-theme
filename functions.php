@@ -9,9 +9,14 @@
 /* -------------------------------------------------------------------------
  *  INCLUDE FILE EKSTERNAL
  * ---------------------------------------------------------------------- */
-
-// Memuat file Related-Post.php yang berisi fungsi artikel terkait
 require_once get_template_directory() . '/inc/Related-Post.php';
+
+
+/* -------------------------------------------------------------------------
+ *  INCLUDE CUSTOMIZER
+ * ---------------------------------------------------------------------- */
+require_once get_template_directory() . '/inc/customizer.php';
+
 
 /* -------------------------------------------------------------------------
  *  Enqueue styles & scripts
