@@ -31,7 +31,7 @@ $package_arul_new_theme;
                     <h2>PETA LOKASI</h2>
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.2267381793986!2d110.67475147591415!3d-7.550236574547592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a6bef054b5479%3A0xdb4d7d5c6d88d553!2sSERVIS%20HP%20ANDROID%20DAN%20IPHONE%20NAZROELCELL%20PENGGING!5e0!3m2!1sen!2sid!4v1755066558738!5m2!1sen!2sid" 
+                            src="<?php echo esc_url( get_theme_mod('google-maps') ); ?>" 
                             width="600" 
                             height="450" 
                             style="border:0;" 

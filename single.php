@@ -179,7 +179,7 @@ get_header();
                                 <h4><i class="cta-icon">🔧</i> Butuh Bantuan Service HP?</h4>
                                 <p>Artikel ini bermanfaat? Tim NAZROEL CELLULER siap membantu memperbaiki perangkat Anda dengan layanan profesional dan terpercaya.</p>
                                 <div class="cta-buttons">
-                                    <a href="https://wa.me/6285786834468?text=Halo%2C%20saya%20membaca%20artikel%20<?php echo urlencode( get_the_title() ); ?>%20dan%20ingin%20konsultasi%20service%20HP" 
+                                    <a href="https://wa.me/6285786834468?text=Halo%2C%20saya%20membaca%20artikel%20<?php echo get_theme_mod('nomor_wa'); ?>%20dan%20ingin%20konsultasi%20service%20HP" 
                                        target="_blank" 
                                        rel="noopener" 
                                        class="cta-button primary">
