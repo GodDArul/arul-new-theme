@@ -24,6 +24,20 @@ function arul_new_theme_customize_register( $wp_customize ) {
         'type'    => 'url',
     ]);
 
+    // Tambah Setting Alamat
+    $wp_customize->add_setting('alamat', [
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+
+    // Tambah Control Alamat
+    $wp_customize->add_control('alamat', [
+        'label'   => 'Alamat',
+        'section' => 'Location_Setting',
+        'type'    => 'text',
+    ]);
+
+    
     /* -------------------------------------------------------------------------
  *  General Setting
  * ---------------------------------------------------------------------- */
@@ -35,42 +49,42 @@ function arul_new_theme_customize_register( $wp_customize ) {
     ]);
 
     // Tambah Setting Nomor WA
-    $wp_customize->add_setting('nomor_wa', [
+    $wp_customize->add_setting('WhatsApp', [
         'default'           => '',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'esc_url_raw',
     ]);
 
     // Tambah Control Nomor WA
-    $wp_customize->add_control('nomor_wa', [
+    $wp_customize->add_control('WhatsApp', [
         'label'   => 'WhatsApp',
         'section' => 'General_Setting',
-        'type'    => 'text',
+        'type'    => 'url',
     ]);
 
     // Tambah Setting Instagram
     $wp_customize->add_setting('instagram', [
         'default'           => '',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'esc_url_raw',
     ]);
 
     // Tambah Control Instagram
     $wp_customize->add_control('instagram', [
         'label'   => 'Instagram',
         'section' => 'General_Setting',
-        'type'    => 'text',
+        'type'    => 'url',
     ]);
 
     // Tambah Setting Facebook
     $wp_customize->add_setting('facebook', [
         'default'           => '',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'esc_url_raw',
     ]);
 
     // Tambah Control Facebook
     $wp_customize->add_control('facebook', [
         'label'   => 'Facebook',
         'section' => 'General_Setting',
-        'type'    => 'text',
+        'type'    => 'url',
     ]);
 
 }
