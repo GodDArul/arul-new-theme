@@ -5,8 +5,6 @@
  */
 
 // Ini adalah file template khusus untuk halaman Lokasi Kami.
-
-$package_arul_new_theme;
 ?>
 
 <?php get_header(); ?>
@@ -19,8 +17,8 @@ $package_arul_new_theme;
                 <h1 class="lokasi-hero-title">LOKASI KAMI</h1>
                 <p class="lokasi-hero-subtitle">Kunjungi langsung konter Nazroel Celluler untuk mendapatkan pelayanan terbaik dengan teknisi berpengalaman.</p>
             </div>
-        </div><!-- .container -->
-    </section><!-- .lokasi-hero-section -->
+        </div>
+    </section>
 
     <!-- Bagian Peta dan Informasi Lokasi -->
     <section class="lokasi-main-section">
@@ -30,15 +28,20 @@ $package_arul_new_theme;
                 <div class="lokasi-map-area">
                     <h2>PETA LOKASI</h2>
                     <div class="map-container">
-                        <iframe 
-                            src="<?php echo esc_url( get_theme_mod('google-maps') ); ?>" 
-                            width="600" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                        <?php $maps_url = get_theme_mod('google-maps'); ?>
+                        <?php if ( !empty($maps_url) ) : ?>
+                            <iframe 
+                                src="<?php echo esc_url( $maps_url ); ?>" 
+                                width="600" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        <?php else : ?>
+                            <p><em>Peta belum tersedia. Silakan hubungi admin untuk update lokasi.</em></p>
+                        <?php endif; ?>
                     </div>
                     
                     <!-- Petunjuk Arah -->
@@ -179,20 +182,19 @@ $package_arul_new_theme;
                         </div>
                     </div>
                 </div>
-            </div><!-- .lokasi-wrapper -->
-        </div><!-- .container -->
-    </section><!-- .lokasi-main-section -->
+            </div>
+        </div>
+    </section>
 
     <!-- Tampilkan konten halaman dari editor WordPress (opsional) -->
     <div class="container">
         <?php
-        // Ini akan menampilkan konten yang kamu tulis di editor halaman "Lokasi Kami" di dashboard WordPress
         if ( have_posts() ) : the_post();
             the_content();
         endif;
         ?>
     </div>
 
-</main><!-- #primary -->
+</main>
 
 <?php get_footer(); ?>

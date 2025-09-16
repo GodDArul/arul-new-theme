@@ -32,7 +32,7 @@ get_header();
                     <h3>iPhone</h3>
                 </div>
                 <div class="device-card" onclick="showServiceDetails('Android')">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images//Device/Android.png' ); ?>" alt="Android Repair">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Device/Android.png' ); ?>" alt="Android Repair">
                     <h3>Android</h3>
                 </div>
                 <div class="device-card" onclick="showServiceDetails('Tablet')">
