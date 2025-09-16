@@ -5,8 +5,6 @@
  */
 
 // Ini adalah file template khusus untuk halaman Hubungi Kami.
-
-$package_arid_new_theme;
 ?>
 
 <?php get_header(); ?>
@@ -19,8 +17,8 @@ $package_arid_new_theme;
                 <h1 class="contact-hero-title">HUBUNGI KAMI</h1>
                 <p class="contact-hero-subtitle">Kami siap membantu Anda dengan layanan terbaik. Jangan ragu untuk menghubungi kami.</p>
             </div>
-        </div><!-- .container -->
-    </section><!-- .contact-hero-section -->
+        </div>
+    </section>
 
     <!-- Bagian Informasi Kontak -->
     <section class="contact-info-section">
@@ -42,9 +40,9 @@ $package_arid_new_theme;
                     <h3>Facebook</h3>
                     <p>Nazroel Celluler</p>
                 </div>
-            </div><!-- .contact-grid -->
+            </div>
         </div>
-    </section><!-- .contact-info-section -->
+    </section>
 
     <!-- Form Kontak dan Peta -->
     <section class="contact-form-section">
@@ -55,7 +53,6 @@ $package_arid_new_theme;
                     <div id="form-messages"></div>
                     <form id="contact-form" method="POST" action="">
                         <?php wp_nonce_field('contact_form_nonce', 'contact_nonce'); ?>
-                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="contact-name">Nama Lengkap *</label>
@@ -66,7 +63,6 @@ $package_arid_new_theme;
                                 <input type="email" id="contact-email" name="contact_email" required>
                             </div>
                         </div>
-
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="contact-phone">Nomor Telepon</label>
@@ -77,7 +73,6 @@ $package_arid_new_theme;
                                 <input type="text" id="contact-subject" name="contact_subject" required>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="contact-service">Layanan yang Diminati</label>
                             <select id="contact-service" name="contact_service">
@@ -91,27 +86,21 @@ $package_arid_new_theme;
                                 <option value="other">Lainnya</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="contact-message">Pesan *</label>
                             <textarea id="contact-message" name="contact_message" rows="6" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
                         </div>
-
                         <button type="submit" class="btn-submit">
                             <span>Kirim Pesan</span>
                             <i class="arrow-icon">→</i>
                         </button>
                     </form>
                 </div>
-
                 <div class="contact-form-right">
                     <h2>LOKASI KAMI</h2>
                     <div class="map-container">
-                        <iframe 
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.2267381793986!2d110.67475147591415!3d-7.550236574547592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a6bef054b5479%3A0xdb4d7d5c6d88d553!2sSERVIS%20HP%20ANDROID%20DAN%20IPHONE%20NAZROELCELL%20PENGGING!5e0!3m2!1sen!2sid!4v1755066558738!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.2267381793986!2d110.67475147591415!3d-7.550236574547592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a6bef054b5479%3A0xdb4d7d5c6d88d553!2sSERVIS%20HP%20ANDROID%20DAN%20IPHONE%20NAZROELCELL%20PENGGING!5e0!3m2!1sen!2sid!4v1755066558738!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-
                     <div class="contact-additional-info">
                         <h3>Informasi Tambahan</h3>
                         <ul>
@@ -136,7 +125,6 @@ $package_arid_new_theme;
         endif;
         ?>
     </div>
-
-</main><!-- #primary -->
+</main>
 
 <?php get_footer(); ?>
