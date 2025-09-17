@@ -26,19 +26,25 @@
             <h2>INFORMASI KONTAK</h2>
             <div class="contact-grid">
                 <div class="contact-card">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Medsos-icon/WhatsApp.png' ); ?>" alt="WhatsApp">
-                    <h3>WhatsApp</h3>
-                    <p>+62 857 8683 4468</p>
+                    <a href="https://wa.me/6285786834468" target="_blank" rel="noopener">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Medsos-icon/WhatsApp.png' ); ?>" alt="WhatsApp">
+                        <h3>WhatsApp</h3>
+                        <p>+62 857 8683 4468</p>
+                    </a>
                 </div>
                 <div class="contact-card">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Medsos-icon/Instagram.png' ); ?>" alt="Instagram">
-                    <h3>Instagram</h3>
-                    <p>@nazroelcell_</p>
+                    <a href="https://instagram.com/nazroelcell_" target="_blank" rel="noopener">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Medsos-icon/Instagram.png' ); ?>" alt="Instagram">
+                        <h3>Instagram</h3>
+                        <p>@nazroelcell_</p>
+                    </a>
                 </div>
                 <div class="contact-card">
-                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Medsos-icon/Facebook.png' ); ?>" alt="Facebook">
-                    <h3>Facebook</h3>
-                    <p>Nazroel Celluler</p>
+                    <a href="https://facebook.com/nazroelcelluler" target="_blank" rel="noopener">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Medsos-icon/Facebook.png' ); ?>" alt="Facebook">
+                        <h3>Facebook</h3>
+                        <p>Nazroel Celluler</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -100,7 +106,7 @@
                     <h2>LOKASI KAMI</h2>
                     <div class="map-container">
                         <?php $maps_url = get_theme_mod('google-maps'); ?>
-                        <iframe src="<?php echo esc_url($maps_url ?: 'URL_DEFAULT'); ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="<?php echo esc_url($maps_url ?: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...'); ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="contact-additional-info">
                         <h3>Informasi Tambahan</h3>
