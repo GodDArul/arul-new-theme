@@ -51,7 +51,7 @@
                 <div class="contact-form-left">
                     <h2>KIRIM PESAN</h2>
                     <div id="form-messages"></div>
-                    <form id="contact-form" method="POST" action="">
+                    <form id="contact-form" method="POST">
                         <?php wp_nonce_field('contact_form_nonce', 'contact_nonce'); ?>
                         <div class="form-row">
                             <div class="form-group">
@@ -66,7 +66,7 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="contact-phone">Nomor Telepon</label>
-                                <input type="tel" id="contact-phone" name="contact_phone">
+                                <input type="tel" id="contact-phone" name="contact_phone" pattern="^\+?\d{9,15}$" title="Masukkan nomor telepon yang valid">
                             </div>
                             <div class="form-group">
                                 <label for="contact-subject">Subjek *</label>
@@ -92,14 +92,15 @@
                         </div>
                         <button type="submit" class="btn-submit">
                             <span>Kirim Pesan</span>
-                            <i class="arrow-icon">→</i>
+                            <i class="arrow-icon" aria-hidden="true">→</i>
                         </button>
                     </form>
                 </div>
                 <div class="contact-form-right">
                     <h2>LOKASI KAMI</h2>
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.2267381793986!2d110.67475147591415!3d-7.550236574547592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a6bef054b5479%3A0xdb4d7d5c6d88d553!2sSERVIS%20HP%20ANDROID%20DAN%20IPHONE%20NAZROELCELL%20PENGGING!5e0!3m2!1sen!2sid!4v1755066558738!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <?php $maps_url = get_theme_mod('google-maps'); ?>
+                        <iframe src="<?php echo esc_url($maps_url ?: 'URL_DEFAULT'); ?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="contact-additional-info">
                         <h3>Informasi Tambahan</h3>
