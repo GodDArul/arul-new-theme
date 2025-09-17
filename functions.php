@@ -22,24 +22,35 @@ require_once get_template_directory() . '/inc/customizer.php';
  *  Enqueue styles & scripts
  * ---------------------------------------------------------------------- */
 
-// Fungsi untuk memuat stylesheet (CSS) dan script (JavaScript) tema.
+// Gabungkan semua enqueue di satu fungsi, urutkan style utama dulu, lalu tambahan
 function arul_new_theme_scripts() {
-    // Memuat style.css utama tema.
-    // Ini adalah stylesheet utama yang berisi informasi tema dan CSS dasar.
-    wp_enqueue_style( 'arul-new-theme-style', get_stylesheet_uri() );
+    // Style utama tema
+    wp_enqueue_style('arul-new-theme-style', get_stylesheet_uri());
 
-    // Memuat main.css dari folder assets/css.
-    // Ini adalah tempat kamu akan menaruh sebagian besar CSS kustom kamu.
-    wp_enqueue_style( 'arul-new-theme-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0', 'all' );
+    // Style tambahan (main.css)
+    wp_enqueue_style('arul-new-theme-main-style', get_template_directory_uri() . '/assets/css/main.css', array('arul-new-theme-style'), '1.0.0', 'all');
 
-    // Memuat script.js dari folder assets/js.
-    // Ini adalah tempat kamu akan menaruh kode JavaScript kustom kamu.
-    // Parameter true berarti script akan dimuat di footer (sebelum </body>) untuk performa yang lebih baik.
-    wp_enqueue_script( 'arul-new-theme-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0.0', true );
+    // Script utama tema
+    wp_enqueue_script('arul-new-theme-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0.0', true);
+
+    // Enqueue khusus halaman Hubungi Kami
+    if (is_page_template('Page-HubungiKami.php')) {
+        wp_enqueue_script('contact-form-script', get_template_directory_uri() . '/assets/js/contact-form.js', array('jquery'), '1.0', true);
+        wp_enqueue_style('contact-form-style', get_template_directory_uri() . '/assets/css/contact-form.css', array('arul-new-theme-main-style'), '1.0', 'all');
+        wp_localize_script('contact-form-script', 'contactFormData', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce'    => wp_create_nonce('contact_form_nonce')
+        ]);
+    }
+
+    // Enqueue khusus halaman Layanan
+    if (is_page_template('Page-Layanan.php') || is_page('layanan')) {
+        wp_enqueue_script('arul-service-modal', get_template_directory_uri() . '/assets/js/service-modal.js', array(), '1.0.0', true);
+    }
 }
-// Menghubungkan fungsi arul_new_theme_scripts() ke hook 'wp_enqueue_scripts'.
-// Ini memberitahu WordPress untuk menjalankan fungsi ini saatnya memuat script dan style.
-add_action( 'wp_enqueue_scripts', 'arul_new_theme_scripts' );
+add_action('wp_enqueue_scripts', 'arul_new_theme_scripts');
+
+// Penjelasan: Menggabungkan semua enqueue agar lebih mudah maintenance dan menghindari duplikasi. Menggunakan file dari folder assets untuk konsistensi.
 
 /* -------------------------------------------------------------------------
  *  Register Navigation Menus
@@ -206,48 +217,10 @@ add_filter( 'excerpt_more', 'arul_new_theme_excerpt_more' );
  *  Custom Pagination
  * ---------------------------------------------------------------------- */
 
-function arul_new_theme_pagination() {
-    if ( is_singular() ) {
-        return;
-    }
+// Hapus fungsi arul_new_theme_pagination() jika tidak dipakai di template.
+// Gunakan the_posts_pagination() di template untuk navigasi halaman blog.
 
-    global $wp_query;
-
-    if ( $wp_query->max_num_pages <= 1 ) {
-        return;
-    }
-
-    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-    $max   = intval( $wp_query->max_num_pages );
-
-    // Jangan tampilkan link jika hanya ada 1 halaman
-    if ( $paged >= 1 && $max > 1 ) {
-        echo '<nav class="navigation pagination" role="navigation">';
-        echo '<div class="nav-links">';
-        
-        // Link ke halaman sebelumnya
-        if ( $paged > 1 ) {
-            printf( '<a class="prev page-numbers" href="%s">« Sebelumnya</a>', get_pagenum_link( $paged - 1 ) );
-        }
-        
-        // Nomor halaman
-        for ( $i = 1; $i <= $max; $i++ ) {
-            if ( $i == $paged ) {
-                echo '<span class="page-numbers current">' . $i . '</span>';
-            } else {
-                printf( '<a class="page-numbers" href="%s">%d</a>', get_pagenum_link( $i ), $i );
-            }
-        }
-        
-        // Link ke halaman selanjutnya
-        if ( $paged < $max ) {
-            printf( '<a class="next page-numbers" href="%s">Selanjutnya »</a>', get_pagenum_link( $paged + 1 ) );
-        }
-        
-        echo '</div>';
-        echo '</nav>';
-    }
-}
+// Penjelasan: Fungsi custom pagination tidak digunakan dan bisa digantikan dengan fungsi bawaan WordPress yang lebih fleksibel.
 
 /* -------------------------------------------------------------------------
  *  Fungsi Helper untuk Sidebar
@@ -256,22 +229,19 @@ function arul_new_theme_pagination() {
 // Cek apakah halaman membutuhkan sidebar
 function arul_new_theme_has_sidebar() {
     // Halaman yang TIDAK menggunakan sidebar
-    $no_sidebar_pages = array(
-        'front-page.php',
-        'page-layanan.php', 
-        'Page-HubungiKami.php',
+    $no_sidebar_templates = array(
+        'page-hubungikami.php',
+        'page-layanan.php',
+        'front-page.php'
     );
-    
-    // Cek template saat ini
-    $current_template = basename( get_page_template() );
-    
-    // Jika template ada dalam daftar no sidebar, return false
-    if ( in_array( $current_template, $no_sidebar_pages ) ) {
+
+    $template_slug = get_page_template_slug();
+    if ($template_slug && in_array(strtolower($template_slug), $no_sidebar_templates)) {
         return false;
     }
-    
+
     // Tampilkan sidebar untuk halaman blog, single post, archive, dll
-    return ( is_home() || is_single() || is_category() || is_tag() || is_archive() || is_search() );
+    return (is_home() || is_single() || is_category() || is_tag() || is_archive() || is_search());
 }
 
 // Mendapatkan class CSS untuk container berdasarkan ada/tidaknya sidebar
