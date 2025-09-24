@@ -24,9 +24,10 @@
         <div class="container"> 
 
             <div class="site-branding">
-                <!-- Menampilkan nama situs atau logo -->
-                <p class="site-title">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                <!-- Menampilkan logo dan nama situs -->
+                <p class="site-title" style="display: flex; align-items: center;">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" style="display: flex; align-items: center;">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" style="height:40px; margin-right:10px;">
                         <?php bloginfo( 'name' ); ?>
                     </a>
                 </p>

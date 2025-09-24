@@ -71,6 +71,13 @@ body {
     margin-top: 5px;
 }
 
+.site-logo img,
+.custom-logo {
+    max-width: 200px !important;
+    height: auto !important;
+    width: auto !important;
+}
+
  /* -------------------------------------------------------------------------
  * Styling untuk Navigasi (main-navigation)
  * ---------------------------------------------------------------------- */
